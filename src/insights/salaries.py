@@ -22,8 +22,24 @@ class ProcessSalaries(ProcessJobs):
         ]
         return min(salaries)
 
+    def verify_value(self, value: int | float | str) -> float:
+        if value is None or not isinstance(value, (int, float, str)):
+            raise ValueError
+        return float(value)
+
     def matches_salary_range(self, job: Dict, salary: Union[int, str]) -> bool:
-        pass
+        if "min_salary" not in job or "max_salary" not in job:
+            raise ValueError
+
+        min_salary = self.verify_value(job["min_salary"])
+        max_salary = self.verify_value(job["max_salary"])
+
+        if min_salary > max_salary:
+            raise ValueError
+
+        salary = self.verify_value(salary)
+
+        return min_salary <= salary <= max_salary
 
     def filter_by_salary_range(
         self, jobs: List[dict], salary: Union[str, int]
