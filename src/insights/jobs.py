@@ -1,4 +1,4 @@
-from typing import List, Dict
+from typing import List, Dict, Union
 import csv
 
 
@@ -19,5 +19,17 @@ class ProcessJobs:
                 unique_job.add(job_type)
         return list(unique_job)
 
-    def filter_by_multiple_criteria(self) -> List[dict]:
-        pass
+    def filter_by_multiple_criteria(
+        self,
+        jobs: List[Dict[str, str]],
+        filter_criteria: Dict[str, Union[str, List[str]]],
+    ) -> List[dict]:
+        if not isinstance(filter_criteria, dict):
+            raise TypeError("filter_by_multiple_criteria must be a dictionary")
+        filtered_jobs = []
+        for job in jobs:
+            if all(
+                job.get(key) == value for key, value in filter_criteria.items()
+            ):
+                filtered_jobs.append(job)
+        return filtered_jobs
