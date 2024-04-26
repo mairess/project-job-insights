@@ -1,10 +1,11 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# <p align="center">Projeto Job Insights</p>
+
+## Contexto
+
+Job insights são análises a partir de um conjunto de dados sobre empregos, utilizando os conceitos básicos da linguagem Python, incluindo `variáveis`, `estruturas de controle`, `funções`, `testes` e `POO`.
+
+## Competências desenvolvidas
+
+- Escrever funções.
+- Utilizar funções built-in do Python.
+- Realizar a manipulação de arquivos.
